@@ -10,4 +10,4 @@ STEPS:
 -> GET http://localhost:3000/get-id/books/:ID                        (TO GET SINGLE BOOK DETAILS USING ID)
 -> PUT http://localhost:3000/update/books/:ID                        (TO UPDATE DETAILS OF A BOOK USING ID)
 -> DELETE http://localhost:3000/delete/books/:ID                     (TO DELETE DETAILS OF A BOOK USING ID)
--> GET http://localhost:3000/search/books/search?Title=<title name>  (TO SEARCH FOR A BOOK USING TITLE )
+-> GET http://localhost:3000/search/books/search?Title=(title name) (TO SEARCH FOR A BOOK USING TITLE )
