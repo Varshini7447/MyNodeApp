@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = new Router();
 const Books = require('./BookStore');
 router.post('/books', (req, res) => {
+    try{
     const newBooks = req.body;
     for (const book of newBooks) {
         const { ID, Title, Author, ISBN } = book;
@@ -22,6 +23,10 @@ router.post('/books', (req, res) => {
     }
 
     res.status(201).send(`${newBooks.length} books added successfully`);
+}
+catch(error){
+    next(error);
+}
 });
 
 module.exports = router;

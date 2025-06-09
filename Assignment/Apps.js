@@ -7,7 +7,6 @@ const logger=require('./Middlewares/log');
 const Auth=require('./Middlewares/Auth');
 const Errorhandler=require('./Middlewares/Error');
 app.use(logger);
-app.use(Errorhandler);
 
 const PostBooks = require('./PostBooks')
 const GetBooks= require('./GetBooks')
@@ -22,6 +21,7 @@ app.use('/get-id',GetID);
 app.use('/update',Auth,Putbooks);
 app.use('/delete',Auth,DeleteBooks);
 app.use('/search',SearchBook);
+app.use(Errorhandler);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
