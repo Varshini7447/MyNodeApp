@@ -1,7 +1,8 @@
 const {Router} = require('express');
 const router = new Router(); 
 const Books=require('./BookStore');
-router.get('/books/:ID', (req, res) => {
+router.get('/books/:ID', (req, res,next) => {
+    try{
     const bookid = req.params.ID;
     const book = Books.find(b => b.ID == bookid);
 
@@ -10,6 +11,10 @@ router.get('/books/:ID', (req, res) => {
     }
 
     res.json(book);
+}
+catch(error){
+    next(error);
+}
 });
 
 

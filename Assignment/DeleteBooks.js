@@ -2,7 +2,8 @@ const { Router } = require('express');
 const router = new Router();
 const Books = require('./BookStore');
 
-router.delete('/books/:ID', (req, res) => {
+router.delete('/books/:ID', (req, res,next) => {
+    try{
     const bookid = req.params.ID;
     const index = Books.findIndex(b => b.ID == bookid);
 
@@ -12,6 +13,10 @@ router.delete('/books/:ID', (req, res) => {
 
     Books.splice(index, 1); 
     res.send("Book deleted successfully");
+}
+catch(error){
+    next(error);
+}
 });
 
 module.exports = router;

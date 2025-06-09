@@ -1,8 +1,9 @@
 const {Router}=require('express')
 const router =new Router();
 const Books=require('./BookStore');
-router.put('/books/:ID',(req,res)=>
+router.put('/books/:ID',(req,res,next)=>
 {   
+    try{
     const bookid = req.params.ID;
     const book = Books.find(b => b.ID == bookid);
     if (!book) {
@@ -17,6 +18,10 @@ router.put('/books/:ID',(req,res)=>
     book.Author=newauthor;
     book.ISBN=newisbn;
    res.send("book updated successfully")
+}
+catch(error){
+    next(error);
+}
 
 })
 module.exports=router;
