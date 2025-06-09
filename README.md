@@ -1,10 +1,9 @@
 ....INSTRUCTIONS ON HOW TO RUN THE APPLICATION....
 STEPS:
-1.Clone the repository to your local system
-2.Navigate into the project folder using the following command:"cd Assignment"
-3.Run the application :"Node Apps.js"
-4.You should see this message in the terminal : "Server is running on http://localhost:3000"
-5.Open PostMan to test the Routes:
+1.Navigate into the project folder using the following command:"cd Assignment"
+2.Run the application :"Node Apps.js"
+3.You should see this message in the terminal : "Server is running on http://localhost:3000"
+4.Open PostMan to test the Routes:
 -> POST http://localhost:3000/add-book/books                         (TO ADD BOOKS)
 -> GET http://localhost:3000/get-book/books                          (TO GET ALL BOOKS DETAILS)
 -> GET http://localhost:3000/get-id/books/:ID                        (TO GET SINGLE BOOK DETAILS USING ID)
