@@ -20,7 +20,7 @@ app.use('/get-book',GetBooks);
 app.use('/get-id',GetID);
 app.use('/update',Auth,Putbooks);
 app.use('/delete',Auth,DeleteBooks);
-app.use('/search',SearchBook);
+app.use('/search',SearchBook)
 
 app.use(Errorhandler);
 
